@@ -12,9 +12,18 @@
   "homepage": "",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.config.js",
+    "prebuild": "npm run generate-sprite",
+    "build:staging": "cross-env NODE_ENV=staging webpack --config webpack/webpack.config.js",
+    "build:qa": "cross-env NODE_ENV=qa webpack --config webpack/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .gitignore --fix-dry-run \"./src/**/*.{js,jsx,tsx,json}\"",
+    "format": "prettier --ignore-path .gitignore --write \"./src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+    "pre-commit": "lint-staged && npm test --watchAll=false",
+    "generate-sprite": "svg-sprite -s --symbol-dest ./src/components/Icon/ --symbol-sprite icons.svg ./src/assets/icons/*.svg"
   },
   "dependencies": {
     "@date-io/date-fns": "^2.13.1",
