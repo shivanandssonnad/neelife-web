@@ -1,0 +1,46 @@
+.display-flex {
+  display: flex;
+}
+
+.display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.display-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-row-center {
+  display: flex;
+  justify-content: center;
+}
+
+.display-column-center {
+  display: flex;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.position-relative {
+  position: relative;
+}

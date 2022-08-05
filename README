@@ -1,0 +1,19 @@
+## React Boilerplate Code
+
+### Libraries used
+1. React
+2. React Router
+3. MUI
+4. Hooks Form
+5. axios
+
+1. Jest Config
+2. Webpack Config
+3. ESLint Config
+
+
+### Integrated Modules
+1. Licious AuthSerice
+2. Redux Toolkit
+3. API service
+4. Notification Module

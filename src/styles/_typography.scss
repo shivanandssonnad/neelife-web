@@ -1,0 +1,73 @@
+.capitalize-text {
+  text-transform: capitalize;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.text-light {
+  color: #868e96 !important;
+}
+
+.style-link {
+  text-decoration: none;
+  color: #1c7ed6;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+$columns: 50;
+@for $i from 0 through $columns {
+  $attr-value: $i;
+  $unit: 'px';
+
+  // marging classes
+  .margin-#{$attr-value} {
+    margin: #{$attr-value}#{$unit};
+  }
+  .margin-top-#{$attr-value} {
+    margin-top: #{$attr-value}#{$unit};
+  }
+  .margin-bottom-#{$attr-value} {
+    margin-bottom: #{$attr-value}#{$unit};
+  }
+  .margin-right-#{$attr-value} {
+    margin-right: #{$attr-value}#{$unit};
+  }
+  .margin-left-#{$attr-value} {
+    margin-left: #{$attr-value}#{$unit};
+  }
+
+  // padding classes
+  .padding-#{$attr-value} {
+    padding: #{$attr-value}#{$unit};
+  }
+  .padding-top-#{$attr-value} {
+    padding-top: #{$attr-value}#{$unit};
+  }
+  .padding-bottom-#{$attr-value} {
+    padding-bottom: #{$attr-value}#{$unit};
+  }
+  .padding-right-#{$attr-value} {
+    padding-right: #{$attr-value}#{$unit};
+  }
+  .padding-left-#{$attr-value} {
+    padding-left: #{$attr-value}#{$unit};
+  }
+  // font size classes
+  .font-size-#{$attr-value} {
+    font-size: #{$attr-value}#{$unit};
+    /*line-height is 1.214 times font-size*/
+    line-height: #{round($attr-value * 1.214)}#{$unit};
+  }
+}
+
+$fontWeightColumns: 7;
+@for $i from 4 through $fontWeightColumns {
+  $attr-value: $i * 100;
+  .font-weight-#{$attr-value} {
+    font-weight: #{$attr-value};
+  }
+}
