@@ -12,6 +12,9 @@ import createAppStore from './store';
 import { theme } from './theme';
 import Notification from '@components/Notification';
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import SW_CONFIG from './swConfig';
+
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
@@ -27,3 +30,6 @@ root.render(
     </StyledEngineProvider>
   </Provider>,
 );
+
+serviceWorkerRegistration.register(SW_CONFIG);
+// serviceWorkerRegistration.unregister();

@@ -1,11 +1,12 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 const prodConfig = merge(commonConfig, {
   mode: 'production',
-  clean: true,
   module: {
     rules: [
       {
@@ -70,7 +71,15 @@ const prodConfig = merge(commonConfig, {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, '..', './src/service-worker.js'),
+      mode: 'production',
+      maximumFileSizeToCacheInBytes: 5000000,
+    }),
   ],
+  output: {
+    clean: true,
+  },
 });
 
 module.exports = prodConfig;
