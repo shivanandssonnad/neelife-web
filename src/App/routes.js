@@ -15,16 +15,16 @@ const APPLICATION_ROUTES = [
     element: <SSORedirect />,
   },
   {
+    path: LOGIN_PATH,
+    element: <LoadableLoginPage />,
+  },
+  {
     path: DEFAULT_PATH,
     element: <LoadableHome />,
     children: [
       {
         index: true,
         element: <LoadablePage1 />,
-      },
-      {
-        path: LOGIN_PATH,
-        element: <LoadableLoginPage />,
       },
     ],
   },

@@ -14,7 +14,7 @@ module.exports = {
       {
         "root": ["./src"],
         "alias": {
-          "@src": "./src",
+          "@config": "./src/config",
           "@app": "./src/App",
           "@components": "./src/components",
           "@pages": "./src/pages",

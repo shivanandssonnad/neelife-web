@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import LoginForm from './LoginForm';
+import LoginProvider from '@pages/LoginProvider';
 
 import { selectTokenInitialised } from '@redux/User/selectors';
 import { DEFAULT_PATH } from '@app/routes';
@@ -25,9 +26,11 @@ function Login() {
   }, [isValidToken, navigate]);
 
   return (
-    <div className={styles.login_form_container}>
-      <LoginForm onSubmit={handleSubmit} />
-    </div>
+    <LoginProvider>
+      <div className={styles.login_form_container}>
+        <LoginForm onSubmit={handleSubmit} />
+      </div>
+    </LoginProvider>
   );
 }
 

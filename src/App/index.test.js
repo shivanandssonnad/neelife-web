@@ -1,5 +1,5 @@
 import TestUtils from '@utils/testUtils';
-import App from '@app';
+import App from '@app/index';
 
 describe('This will test App component', () => {
   test('Should check if tests working correctly', async () => {

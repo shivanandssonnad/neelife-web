@@ -1,6 +1,6 @@
-import API from '@src/api';
 import { createService } from '@utils/serviceFactory';
-import getEnvironmentConfig from '@src/config';
+import getEnvironmentConfig from '@config/index';
+import API from '../api';
 
 const {
   BE_BASE_URL,

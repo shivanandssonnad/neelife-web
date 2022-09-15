@@ -1,5 +1,5 @@
 const API = {
-  verifyTokenAPI: '/verify',
+  verifyTokenAPI: 'v1/restricted/verify',
   home: '/',
 };
 

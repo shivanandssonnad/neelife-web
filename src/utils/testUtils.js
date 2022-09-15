@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { theme } from '@src/theme/index';
+import { theme } from '../theme/index';
 import { Provider } from 'react-redux';
-import createAppStore from '@src/store';
+import createAppStore from '../store';
 import { delayAssert } from './common';
 
 const testStore = createAppStore();
