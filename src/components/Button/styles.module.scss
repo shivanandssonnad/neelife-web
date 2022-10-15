@@ -1,0 +1,22 @@
+.action_button {
+  padding: 16px 32px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.cancel_button {
+  border-color: #dee2e6;
+  color: #495057;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.button_group {
+  & > button:not(:last-child) {
+    margin-right: 24px;
+  }
+}

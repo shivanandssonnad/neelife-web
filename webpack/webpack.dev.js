@@ -1,9 +1,7 @@
-const path = require('path');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const portFinder = require('portfinder-sync');
-const { InjectManifest } = require('workbox-webpack-plugin');
 
 const DEV_PORT = 3000;
 const OPEN_PORT = portFinder.getPort(DEV_PORT);
@@ -70,11 +68,6 @@ const devConfig = merge(commonConfig, {
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
-    new InjectManifest({
-      swSrc: path.resolve(__dirname, '..', './src/service-worker.js'),
-      mode: 'development',
-      maximumFileSizeToCacheInBytes: 5000000,
-    }),
   ],
 });
 module.exports = devConfig;

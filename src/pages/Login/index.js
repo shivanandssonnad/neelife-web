@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import LoginForm from './LoginForm';
-import LoginProvider from '@pages/LoginProvider';
+import LoginPageContainer from '@components/Container/LoginPageContainer';
+import LoginMessage from '@components/PageComponents/LoginPage/LoginMessage';
+import LoginHeader from '@components/Header/LoginHeader';
 
-import { selectTokenInitialised } from '@redux/User/selectors';
 import { DEFAULT_PATH } from '@app/routes';
-import { AUTH_SERVICE_LOGIN_PAGE } from './constants';
+import CHCLoginForm from '@components/PageComponents/LoginPage/LoginForm';
+import { selectTokenInitialised } from '@redux/User/selectors';
 
 import styles from './styles.module.scss';
 
@@ -15,9 +16,9 @@ function Login() {
   const isValidToken = useSelector(selectTokenInitialised);
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    window.location.assign(AUTH_SERVICE_LOGIN_PAGE);
-  };
+  async function handleSubmitForm(values) {
+    console.log(values);
+  }
 
   useEffect(() => {
     if (isValidToken) {
@@ -26,11 +27,16 @@ function Login() {
   }, [isValidToken, navigate]);
 
   return (
-    <LoginProvider>
+    <>
+      <LoginHeader />
       <div className={styles.login_form_container}>
-        <LoginForm onSubmit={handleSubmit} />
+        <CHCLoginForm
+          className={styles.form_container}
+          onSubmit={handleSubmitForm}
+        />
+        <LoginMessage className={styles.message_container} />
       </div>
-    </LoginProvider>
+    </>
   );
 }
 

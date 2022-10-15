@@ -1,0 +1,95 @@
+.container {
+  padding: 24px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.full_width {
+  width: 100%;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.sub_label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.form_button {
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.text_field {
+  & :global(.MuiInputLabel-asterisk) {
+    color: #c5003e;
+  }
+
+  // update broder radius
+  & :global(.MuiOutlinedInput-root) {
+    border-radius: 12px;
+  }
+
+  // update broder color (not focused)
+  & :global(.MuiOutlinedInput-notchedOutline) {
+    border-width: 1px;
+    border-color: #868e96;
+  }
+
+  // update broder color (focused)
+  &
+    :global(.MuiOutlinedInput-root.Mui-focused
+      .MuiOutlinedInput-notchedOutline) {
+    border-width: 1px;
+    box-shadow: 0px 0px 6px #f08c00;
+    border-color: #f08c00;
+  }
+
+  // update label color (not shrinked)
+  & :global(.MuiInputLabel-root) {
+    color: #adb5bd;
+  }
+
+  // update label color (shrinked)
+  & :global(.MuiInputLabel-shrink) {
+    background-color: #ffffff;
+  }
+
+  // update background color of disabled input
+  & :global(.MuiOutlinedInput-root.Mui-disabled) {
+    background: #f8f9fa;
+  }
+
+  // update text color of disabled input
+  & :global(.MuiOutlinedInput-input.Mui-disabled) {
+    cursor: not-allowed;
+    -webkit-text-fill-color: #495057;
+  }
+}
+
+.shipment_view_section {
+  border: 1px solid #dee2e6;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 24px;
+}

@@ -1,0 +1,21 @@
+.login_form_container {
+  max-width: 50%;
+}
+
+.grey_background {
+  background: #f8f9fa;
+}
+
+.login_message_container {
+  max-width: 60%;
+}
+
+.text_center {
+  text-align: center;
+}
+
+@media (max-width: 801px) {
+  .login_form_container {
+    max-width: 80%;
+  }
+}

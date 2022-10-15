@@ -1,0 +1,50 @@
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.header-container {
+  position: sticky;
+  min-height: 80px;
+  top: 0px;
+  background: #ffffff;
+  box-shadow: 0px 1px 0px #e4e7f0;
+  padding: 0px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+
+  & > .action-container {
+    display: flex;
+    padding: 12px 0px;
+    & > button {
+      text-transform: capitalize;
+      font-size: 16px;
+    }
+  }
+}
+
+.avatar {
+  background-color: #dee2e6;
+}
+
+.dropdown-icon {
+  color: #000000;
+}
+
+.menu-item {
+  min-width: 15px;
+}
+
+.login_header_container {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  padding: 0px 48px;
+  z-index: 1;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}

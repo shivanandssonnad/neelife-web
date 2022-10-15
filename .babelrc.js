@@ -16,6 +16,7 @@ module.exports = {
         "alias": {
           "@config": "./src/config",
           "@app": "./src/App",
+          "@theme": "./src/theme",
           "@components": "./src/components",
           "@pages": "./src/pages",
           "@redux": "./src/redux",
